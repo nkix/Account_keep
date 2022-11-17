@@ -1,0 +1,72 @@
+<vector
+    android:height="432dp"
+    android:width="432dp"
+    android:viewportWidth="432"
+    android:viewportHeight="432"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:name="frame"
+        android:scaleX="0.392"
+        android:scaleY="0.392">
+        <path android:name="rectangle"
+            android:strokeColor="#292D32"
+            android:strokeWidth="40"
+            android:pathData="
+            M330,450
+            Q330,350 430,350
+            M650,350
+            Q750,350 750,450
+            v220
+            M750,670
+            Q750,770 650,770
+            h-250
+            M430,770
+            Q330,770 330,670
+            v-220
+            "/>
+        <path android:name="rectangle_small"
+            android:strokeColor="#292D32"
+            android:strokeWidth="40"
+            android:pathData="
+            M440,350
+            Q440,300 490,300
+            h100
+            M590,300
+            Q640,300 640,350
+            v10
+            M640,350
+            Q640,400 590,400
+            h-100
+            M490,400
+            Q440,400 440,350"
+            />
+    </group>
+
+    <group android:name="top"
+        android:scaleX="0.392"
+        android:scaleY="0.392">
+
+        <path android:name="line1"
+            android:strokeColor="#F7931E"
+            android:strokeWidth="40"
+            android:strokeLineCap="round"
+            android:pathData="
+            M430,530
+            h180"/>
+    </group>
+
+    <group android:name="bottom"
+        android:scaleX="0.392"
+        android:scaleY="0.392">
+        <path android:name="line2"
+            android:strokeColor="#F7931E"
+            android:strokeWidth="40"
+            android:strokeLineCap="round"
+            android:pathData="
+            M430 620
+            h100"/>
+
+    </group>
+</vector>
+
+
+
