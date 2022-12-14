@@ -3,4 +3,9 @@
     <string name="func_add">Add</string>
     <string name="func_edit">Edit</string>
     <string name="func_statistic">Statistics</string>
+
+    <string name="menu_home">Home</string>
+    <string name="menu_add">Add</string>
+    <string name="menu_summary">Summary</string>
+    <string name="menu_setting">Setting</string>
 </resources>

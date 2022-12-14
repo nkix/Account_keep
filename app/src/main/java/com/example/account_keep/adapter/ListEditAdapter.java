@@ -40,7 +40,7 @@ public class ListEditAdapter extends RecyclerView.Adapter{
             description = itemView.findViewById(R.id.description);
             amount = itemView.findViewById(R.id.amount);
 
-            itemView.setOnClickListener(view -> {
+            /*itemView.setOnClickListener(view -> {
                 int position = getLayoutPosition();
                 Context context = view.getContext();
                 Intent intent = new Intent(context, EditActivity.class);
@@ -59,7 +59,7 @@ public class ListEditAdapter extends RecyclerView.Adapter{
                 }
 
                 return true;
-            });
+            });*/
         }
 
         public TextView getDescription(){
@@ -101,6 +101,7 @@ public class ListEditAdapter extends RecyclerView.Adapter{
             ImageButton delete = view.findViewById(R.id.deleteButton);
             delete.setVisibility(View.INVISIBLE);*/
         });
+
         //((ViewHolder)holder).getDelete().setTag(position);
     }
 
@@ -122,7 +123,7 @@ public class ListEditAdapter extends RecyclerView.Adapter{
         accList.remove(position);
         dbOpenHelper.accountDelete(getItem(position));
         notifyItemRemoved(position);
-        notifyDataSetChanged();
+        notifyItemRangeChanged(position, getItemCount());
     }
 
     /**

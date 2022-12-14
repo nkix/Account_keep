@@ -68,6 +68,28 @@ public class MainActivity extends AppCompatActivity {
 
         //set OnItemClickListener for recyclerView
         //handle onclick and onlongclick
+        recyclerView.addOnItemTouchListener(new ItemClickListener(recyclerView, new ItemClickListener.OnItemClickListener(){
+
+            @Override
+            public void onItemClick(View view, int position) {
+                Context context = view.getContext();
+                Intent intent = new Intent(context, EditActivity.class);
+                intent.putExtra("acc", ListEditAdapter.getItem(position));
+                context.startActivity(intent);
+            }
+
+            @Override
+            public void onItemLongClick(View view, int position) {
+                ImageButton delete = view.findViewById(R.id.deleteButton);
+
+                if(delete.getVisibility() == View.INVISIBLE){
+                    delete.setVisibility(View.VISIBLE);
+                }
+                else{
+                    delete.setVisibility(View.INVISIBLE);
+                }
+            }
+        }));
 
         //deal with result returned by AddActivity
         //add the result (new account) into acList
@@ -75,6 +97,14 @@ public class MainActivity extends AppCompatActivity {
             if(result != null){
                 recyclerAdapter.addItem(recyclerAdapter.getItemCount(), result);
                 newAccountAdd = true;
+            }
+        });
+
+        //deal with result returned by EditActivity
+        //try to refresh the list after edit page finished
+        editResultLauncher = registerForActivityResult(new EditResultContract(), result -> {
+            if(result != null){
+
             }
         });
 
